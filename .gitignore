@@ -1,0 +1,51 @@
+# Build e binários
+bin/
+obj/
+out/
+
+# Configurações do usuário
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Arquivos de log
+*.log
+
+# Cache do Visual Studio / VS Code
+.vscode/
+.vs/
+
+# Arquivos gerados pelo sistema
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# Publicações
+publish/
+*.publish.xml
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Configurações locais
+appsettings.Development.json
+appsettings.json
+
+# Secretos e chaves
+secrets.json
+
+# Testes
+TestResults/
+*.coverage
+*.coveragexml
+
+# Outros
+*.swp
+*.swo
