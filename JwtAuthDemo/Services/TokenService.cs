@@ -2,11 +2,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using JwtAuthDemo.Services.Interfaces;
 
 
 namespace JwtAuthDemo.Services
 {
-    public class TokenService
+    public class TokenService : IAuthService
     {
         private readonly string _key;
         private readonly string _issuer;

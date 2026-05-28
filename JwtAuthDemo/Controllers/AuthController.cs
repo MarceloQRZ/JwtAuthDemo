@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using JwtAuthDemo.Models;
 using JwtAuthDemo.Services;
 using Microsoft.AspNetCore.Authorization;
+using JwtAuthDemo.Services.Interfaces;
 
 namespace JwtAuthDemo.Controllers
 {
@@ -9,11 +10,11 @@ namespace JwtAuthDemo.Controllers
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly TokenService _tokenService;
+        private readonly IAuthService _authService;
 
-        public AuthController(TokenService tokenService)
+        public AuthController(IAuthService tokenService)
         {
-            _tokenService = tokenService;
+            _authService = tokenService;
         }
 
         [HttpPost("Login")]
@@ -22,7 +23,7 @@ namespace JwtAuthDemo.Controllers
         {
             if (request.Username == "Teste" && request.Password == "123")
             {
-                var token = _tokenService.GenerateToken(request.Username);
+                var token = _authService.GenerateToken(request.Username);
                 return Ok(new { Token = token });
             }
 

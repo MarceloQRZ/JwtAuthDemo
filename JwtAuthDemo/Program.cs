@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using JwtAuthDemo.Services;
+using JwtAuthDemo.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,10 +28,10 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
+builder.Services.AddJwtAuthDemoServices();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<TokenService>();
 
 
 var app = builder.Build();
